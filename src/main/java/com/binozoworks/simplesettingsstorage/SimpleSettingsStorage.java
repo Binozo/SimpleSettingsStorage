@@ -59,6 +59,13 @@ public class SimpleSettingsStorage {
         return Files.readString(Paths.get(fileName));
     }
 
+    public JSONObject getStorage(){
+        return jsonObject;
+    }
+
+    public void saveStorage() throws IOException {
+        Files.write(Paths.get(fileName), jsonObject.toString().getBytes(StandardCharsets.UTF_8));
+    }
 
 
 
